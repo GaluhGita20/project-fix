@@ -1,0 +1,721 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body{
+    line-height: 1.6;
+    justify-content: center;
+    flex-direction: column;
+}
+
+section{
+    padding: 80px 0;
+}
+
+.container{
+    width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+    overflow: hidden;
+    margin-left: auto;
+    margin-right: auto;
+}
+@media only screen and (min-width: 1200px) and (max-width:2000px){ 
+    .container {
+        max-width:1140px;
+    }
+}
+
+@media only screen and (min-width: 992px) and (max-width:1199.98px){ 
+    .container {
+        max-width:960px;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width:991.98px){ 
+    .container {
+        max-width:720px;
+    }
+}
+@media only screen and (min-width: 576px) and (max-width:767.98px){ 
+    .container {
+        max-width:540px;
+    }
+}
+
+@media only screen and (min-width: 480px) and (max-width:575.98px){ 
+    .container {
+        max-width:440px;
+    }
+}
+
+.title{
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+button{
+    text-transform: none;
+}
+
+button, input{
+    overflow: visible;
+}
+
+button, input, optgroup, select, textarea{
+    margin: 0;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+
+button:not(:disabled){
+    cursor: pointer;
+}
+
+a:hover{
+    text-decoration: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Progressing Bar Loader */
+.overlay-load{
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,0.5);
+    z-index: 9999;
+    position: fixed;
+    top: 0;
+}
+.loader{
+    margin: 60px auto;
+    font-size: 10px;
+    position: relative;
+    top: 30%;
+    text-indent: -9999em;
+    border-top: .8em solid #c1292e2f;
+    border-right: .8em solid #c1292e2f;
+    border-bottom: .8em solid #c1292e2f;
+    border-left: .8em solid #c1292e2f;
+    transform: translateZ(0);
+    animation: a 1.5s infinite linear;
+
+}
+
+.loader, .loader::after{
+    border-radius: 50%;
+    width: 10em;
+    height: 10em;
+}
+
+.text-center{
+    text-align: center!important;
+}
+
+.overlay-load img{
+    width:200px;
+    height: 400px;
+    display: none;
+}
+
+@media only screen and (min-width: 1200px) and (max-width:2000px){ 
+    .overlay-load img{
+        width:auto;
+    }
+}
+
+@media only screen and (min-width: 992px) and (max-width:1199.98px){ 
+    .overlay-load img{
+        width:200px;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width:991.98px){ 
+    .overlay-load img{
+        width:200px;
+    }
+}
+@media only screen and (min-width: 576px) and (max-width:767.98px){ 
+    .overlay-load img{
+        width:100px;
+    }
+}
+
+@media only screen and (min-width: 480px) and (max-width:575.98px){ 
+    .overlay-load img{
+        width:auto;
+    }
+}
+
+
+
+
+
+
+
+
+
+/* Navigation */
+#navigate #menu{
+    box-shadow: 5px 5px 9px rgb(9 20 17 / 50%);
+    font-size: 1.65rem;
+    padding: 5px 20px;
+    border-radius: 2.5rem;
+    transition: all .6s ease-in-out;
+    z-index: 9999;
+    color: #fff;
+    background: linear-gradient(to left top, #1d073a, #070006);
+    position: fixed;
+    right: 0;
+    margin: 15px 15px 0;
+    cursor: pointer;
+}
+
+#navigate #menu button{
+    background: transparent;
+    border: none;
+    margin-left: 5px;
+}
+
+.line-hamburger{
+    width: 25px;
+    height: 2px;
+    background: hsla(0,0%,100%,.952);
+    margin: 0 auto;
+    display: block;
+    transition: all .6s ease-in-out;
+}
+
+.line-hamburger:nth-child(2){
+    width: 15px;
+    margin: 5px;
+}
+
+.line-hamburger:nth-child(3){
+    height: 3px;
+}
+
+#menu button:focus{
+    outline: none;
+}
+
+#menu-content{
+    z-index: -99;
+    opacity: 0;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background: rgb(39, 30, 73);
+    transition: all .6s ease-in-out;
+    color: #c1292e;
+}
+
+.show{
+    display: block;
+}
+
+#navigate #menu-content.show{
+    z-index: 9998;
+    opacity: 1;
+}
+
+#navigate #menu-content .container-fluid .row{
+    height: 100vh;;
+}
+
+#navigate #menu-content ul{
+    list-style-type: none;
+    padding-left: 0;
+}
+
+#navigate #menu-content ul a{
+    color: #fff;
+    font-weight: 700;
+    transition: all .2s ease-in;
+}
+
+#navigate #menu-content ul li{
+    font-size: 2.5rem;
+    padding: 4px 0;
+    margin-left: 7.5rem;
+}
+
+
+
+
+
+
+/* Section Banner */
+#banner{
+    background: url('../asset/logo/BERANDA-01.jpg') 45%;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    background-repeat: no-repeat;
+    z-index: 1;
+    padding: 0;
+}
+
+@media only screen and (min-width: 992px) and (max-width:1199.98px){ 
+    #banner{
+        height: 90vh;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width:991.98px){ 
+    #banner{
+        height: 90vh;
+    }
+}
+@media only screen and (min-width: 576px) and (max-width:767.98px){ 
+    #banner{
+        height: 80vh;
+    }
+}
+
+@media only screen and (min-width: 480px) and (max-width:575.98px){ 
+    #banner{
+        height: 70vh;
+    }
+}
+
+@media only screen and (min-width: 100px) and (max-width:479.98px){ 
+    #banner{
+        height: 70vh;
+    }
+}
+
+#banner h1{
+    color: #fff;
+}
+#banner h3{
+    color: #fff;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Page Sambutan */
+.sambutan{
+    /* opacity: 0;
+    display: none;  */
+    transition: opacity 1s ease-in;
+    /* height: 100%; */
+}
+
+section h1.title{
+    font-size: 3.6rem;
+    margin-bottom: 1.75rem;
+    text-transform: uppercase;
+    
+}
+
+.font-weight-normal{
+    font-weight: 400!important;
+}
+
+.sambutan p{
+    font-size: 20px;
+    color: #333;
+}
+
+.row{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+.row-a{
+    margin-right: -30px;
+    margin-left: -30px;
+}
+
+.col-1 h3{
+    color: #000;
+    font-size: 2em;
+    font-weight: 700;
+}
+
+/* Main Video Section Sambutan */
+#main-video .card{
+    border-radius:20px;
+    border-top: 0;
+}
+
+.col-sm-12{
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+.card{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: .25rem;
+}
+
+.card-video{
+    box-shadow: 5px 5px 10px;
+}
+
+@media only screen and (min-width: 1200px) and (max-width:2000px){ 
+    #main-video .card-video {
+        width:480px !important;
+    }
+}
+
+@media only screen and (min-width: 992px) and (max-width:1199.98px){ 
+    #main-video .card-video {
+        width:400px !important;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width:991.98px){ 
+    
+}
+@media only screen and (min-width: 576px) and (max-width:767.98px){ 
+    .col-sm-12{
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    #logo-desc{
+        margin-top: 0px;
+    }
+}
+
+@media only screen and (min-width: 480px) and (max-width:575.98px){ 
+    .container {
+        max-width:440px;
+    }
+}
+
+#main-video .card .title{
+    left: 0;
+}
+
+.overlay{
+    border-radius: 20px;
+    background-image: linear-gradient(to right top, rgba(0,0,0,0.3)12%, #ee45235b 88%);
+}
+
+.overlay, .overlay-black{
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+/* Button Venobox */
+.card-video{
+    transform: scale(1);
+    transition: 0.3s ease-in-out;
+}
+.card-video:hover{
+    transform: scale(1.05);
+}
+#main-video .play-btn{
+    background-color: #136f638f;
+}
+
+.play-btn{
+    width: 94px;
+    height: 94px;
+    border-radius: 50%;
+    display: block;
+    top: calc(50% - 47px);
+    position: absolute;
+    overflow: hidden;
+    transition: all .3s cubic-bezier(.55, .055, .675, .19);
+}
+
+.play-btn:before{
+    content: "";
+    position: absolute;
+    width: 133px;
+    height: 133px;
+    animation-delay: 0s;
+    animation: b 3s;
+    /* animation-duration:3s;
+    animation-fill-mode: none;
+    animation-play-state: running;
+    animation-name: b; */
+    animation-iteration-count: infinite;
+    opacity: 1;
+    border-radius: 50%;
+    border: 10px solid #136f63d0;
+    top: -20%;
+    left: -20%;
+    background: rgba(198, 16, 0, 0);
+}
+
+.play-btn:after{
+    content: "";
+    position: absolute;
+    left: 42%;
+    top: 35%;
+    width: 0;
+    height: 0;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-left: 20px solid hsla(0,0%,100%,.919);
+    z-index: 90;
+}
+
+.play-btn:hover:after{
+    animation: c 1s;
+}
+
+/* .play-btn:hover::after{
+    transform: scale(20);
+    border-left: 40px solid #136f63d0;
+}
+
+.play-btn:hover::before{
+    position: absolute;
+    animation: none;
+    border-left: 40px solid #fff;
+    z-index: 101;
+} */
+
+@keyframes pulse{
+    0%{
+        transform: scale(.6,.6);
+    }
+    100%{
+        transform: scale(1,1);
+    }
+}
+
+/* .play-btn{
+    width: 94px;
+    height: 94px;
+    background: #fff;
+    display: block;
+    margin: 0 auto;
+    border-radius: 50%;
+    position: relative;
+    background: radial-gradient(#0078fe 50%, rgba(5,5,5.8) 52%);
+}
+
+.play-btn::before{
+    position: absolute;
+    content: '';
+    width: 120px;
+    height: 120px;
+    top: -15%;
+    left: -15%;
+    border: 2px solid #666;
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse{
+    0%{
+        
+    }
+} */
+/* End Section Sambutan */
+
+
+
+
+
+
+
+
+
+/* Info Fakultas*/
+#info-falkutas{
+    background: url('../asset/umum/bg-black-asset.png') 50%;
+    background-size: cover;
+    min-height: 100vh;
+    width: 100%;
+    /* transition: 1s all ease-in-out; */
+    /* margin-top: -300px; */
+}
+
+section.bg-aqua{
+    background-color: aquamarine;  
+    color: #f5f5f5;
+}
+
+hr{
+    display: block;
+    margin-block-start: 0.5em;
+    margin-block-end: 0.5em;
+    margin-inline-start: auto;
+    margin-inline-end: auto;
+
+}
+
+img{
+    vertical-align: middle;
+    width: 100%;
+}
+
+ol{
+    display: block;
+    list-style-type: decimal;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-block-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+}
+/* End Section Info Fakultas */
+
+
+
+
+
+
+
+
+
+/* Gallery Podcast */
+.main-podcast{
+    margin-top: 30px;
+    width: 100%;
+    height: 100%;
+    margin-bottom: 30px;
+}
+.main-podcast iframe{
+    width: calc(100%/1);
+    min-height: 400px;
+    border-radius: 3%;
+}
+
+.details{
+    width: 38%;
+    margin-left: 2%;
+}
+
+.gallery-podcast{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.gallery-podcast .item-podcast{
+    width: calc(97%/3);
+    position: relative;
+    box-shadow: 5px 5px 10px;
+}
+
+.gallery-podcast img{
+    width: 100%;
+    display: block;
+}
+
+.gallery-podcast .youtube-icon{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    background-color: rgba(0,0,0,.8);
+    position: absolute;
+    top: 0;
+    left: 0;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+}
+
+.gallery-podcast .youtube-icon:hover{
+    background-color: rgba(0,0,0,.0);
+}
+
+.gallery-podcast .youtube-icon.active{
+    background-color: rgba(0,0,0,.0);
+}
+
+.gallery-podcast .youtube-icon.active img{
+    opacity: 0;
+}
+
+.youtube-icon img{
+    width: 25%;
+}
+
+/* #video_id{
+    max-height: 100vmin;
+} */
+/* End Section Podcast */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 240px;
+    background: #11101d;
+    padding:6px 14px;
+}
+
+.logo_content .logo i{
+    font-size: 28px;
+}
+
+.floating{
+    right: 1%;
+    bottom: 1%;
+    position: fixed;
+}
+
+.overlay-load{
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,.5);
+    z-index: 9999;
+    position: fixed;
+    top: 0;
+} */
+

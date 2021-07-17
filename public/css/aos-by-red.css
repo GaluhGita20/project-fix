@@ -1,0 +1,8 @@
+[data-aos^=fade][data-aos^=fade].aos-animate{
+    opacity: 1;
+    transform: translateZ(0);
+}
+
+[data-aos][data-aos][data-aos-easing=ease], body[data-aos-easing=ease] [data-aos] {
+    transition-timing-function: ease;
+}

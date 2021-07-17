@@ -1,0 +1,28 @@
+.icon-elib {
+    background: url('../img/logo/icon-elib.png') no-repeat;
+    display: inline-block;
+    height: 230px;
+    background-position: 1px 0;
+    position: relative;
+    width: 235px;
+}
+a .icon-elib:hover{
+	background-position: -234px 0;
+}
+
+.icon-kuisioner{
+	background: url('../img/logo/icon-kuisioner.png') no-repeat;
+	display: inline-block;
+	 height: 230px;
+    background-position: 1px 0;
+    position: relative;
+    width: 226px;
+}
+a .icon-kuisioner:hover{
+	background-position: -228px 0;
+
+}
+.sim-logo{
+text-align: center;
+}
+
